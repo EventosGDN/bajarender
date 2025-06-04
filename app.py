@@ -1,9 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import openai  # o el paquete que uses, esto es ejemplo
 
 app = Flask(__name__)
-CORS(app)  # Habilita CORS para todas las rutas
+CORS(app)
 
 @app.route("/reflexion", methods=["POST"])
 def reflexion():
@@ -13,10 +12,9 @@ def reflexion():
     if not user_message:
         return jsonify({"error": "Mensaje vacío"}), 400
 
-    # Aquí iría tu lógica de generación de respuesta empática.
-    # Para ejemplo simple:
+    # Tu lógica real, podés reemplazar esta respuesta dummy si hace falta
     respuesta = f"🌿 Gracias por compartir eso. No estás solo/a. Lo que sentís importa."
-    
+
     return jsonify({ "response": respuesta })
 
 if __name__ == "__main__":
